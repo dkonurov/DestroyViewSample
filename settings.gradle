@@ -1,0 +1,2 @@
+rootProject.name='Sample Destroy View'
+include ':app'
