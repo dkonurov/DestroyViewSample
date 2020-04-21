@@ -18,9 +18,11 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        if (savedInstanceState == null) {
+        if (childFragmentManager.findFragmentById(R.id.container) == null) {
+            val child = "CHILD"
             childFragmentManager.beginTransaction()
-                .add(R.id.container, ChildFragment())
+                .add(R.id.container, ChildFragment(), child)
+                .addToBackStack(child)
                 .commit()
         }
     }
